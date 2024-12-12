@@ -10,7 +10,7 @@ import java.io.Serializable;
  * 查询应用请求
  *
  * @author yy
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
+ * createTime
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

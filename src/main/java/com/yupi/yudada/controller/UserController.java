@@ -15,6 +15,7 @@ import com.yupi.yudada.model.vo.LoginUserVO;
 import com.yupi.yudada.model.vo.UserVO;
 import com.yupi.yudada.service.UserService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -182,11 +183,17 @@ public class UserController {
     //@AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
     public BaseResponse<Boolean> updateUser(@RequestBody UserUpdateRequest userUpdateRequest,
             HttpServletRequest request) {
-        if (userUpdateRequest == null || userUpdateRequest.getId() == null) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-        }
+        User loginUser = userService.getLoginUser(request);
+//        if (userUpdateRequest == null || userUpdateRequest.getId() == null) {
+//            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+//        }
         User user = new User();
+        log.info("loginUser:{}",loginUser);
+
+//        user.setUpdateTime(Date.now());
         BeanUtils.copyProperties(userUpdateRequest, user);
+        user.setId(loginUser.getId());
+        log.info("loginUser:{}",user);
         boolean result = userService.updateById(user);
         ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
         return ResultUtils.success(true);
