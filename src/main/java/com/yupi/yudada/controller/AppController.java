@@ -28,7 +28,7 @@ import java.util.Date;
  * 应用接口
  *
  * @author yy
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
+ * createTime
  */
 @RestController
 @RequestMapping("/app")

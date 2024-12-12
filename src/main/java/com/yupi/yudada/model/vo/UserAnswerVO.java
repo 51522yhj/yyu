@@ -15,7 +15,7 @@ import java.util.List;
  * 用户答案视图
  *
  * @author yy
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
+ * createTime
  */
 @Data
 public class UserAnswerVO implements Serializable {

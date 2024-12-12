@@ -19,7 +19,7 @@ import java.util.Optional;
  * 自定义打分类应用评分策略
  *
  * @author yy
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
+ * createTime
  */
 @ScoringStrategyConfig(appType = 0, scoringStrategy = 0)
 public class CustomScoreScoringStrategy implements ScoringStrategy {

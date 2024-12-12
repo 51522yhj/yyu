@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  * 评分结果服务
  *
  * @author yy
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
+ * createTime
  */
 public interface ScoringResultService extends IService<ScoringResult> {
 
